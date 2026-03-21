@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A1B2C3D4E5F60718293A4B5 /* WendyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B5 /* WendyApp.swift */; };
+		8A1B2C3D4E5F60718293A4B6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B6 /* ChatMessage.swift */; };
+		8A1B2C3D4E5F60718293A4B7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B7 /* Configuration.swift */; };
+		8A1B2C3D4E5F60718293A4B8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B8 /* APIService.swift */; };
+		8A1B2C3D4E5F60718293A4C0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4C0 /* ChatViewModel.swift */; };
+		8A1B2C3D4E5F60718293A4C1 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4C1 /* ChatView.swift */; };
+		8A1B2C3D4E5F60718293A4C2 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4C2 /* MessageBubble.swift */; };
+		8A1B2C3D4E5F60718293A4C3 /* InputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4C3 /* InputBar.swift */; };
+		8A1B2C3D4E5F60718293A4C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4C4 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A2B3C4D5E6F70819203A4B5 /* WendyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendyApp.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4B6 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4B7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4B8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4C0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4C1 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4C2 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4C3 /* InputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBar.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70819203A4C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2A3B4C5D6E7F80910213A4B5 /* WendyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WendyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A4B5C6D7E8F90A10213B4C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A5B6C7D8E9F00A11213B4C5 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B6C7D8E9F00A11213B4C6 /* WendyApp */,
+				4A5B6C7D8E9F00A11213B4CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4C6 /* WendyApp */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70819203A4B5 /* WendyApp.swift */,
+				4A5B6C7D8E9F00A11213B4C7 /* Models */,
+				4A5B6C7D8E9F00A11213B4C8 /* ViewModels */,
+				4A5B6C7D8E9F00A11213B4C9 /* Views */,
+				4A5B6C7D8E9F00A11213B4CA /* Services */,
+			);
+			path = WendyApp;
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70819203A4B6 /* ChatMessage.swift */,
+				1A2B3C4D5E6F70819203A4B7 /* Configuration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4C8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70819203A4C0 /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70819203A4C1 /* ChatView.swift */,
+				1A2B3C4D5E6F70819203A4C2 /* MessageBubble.swift */,
+				1A2B3C4D5E6F70819203A4C3 /* InputBar.swift */,
+				1A2B3C4D5E6F70819203A4C4 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70819203A4B8 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A5B6C7D8E9F00A11213B4CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A3B4C5D6E7F80910213A4B5 /* WendyApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A6B7C8D9EAF10B11223C4D5 /* WendyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A8B9CADBEBF30D11243E4F7 /* Build configuration list for PBXNativeTarget "WendyApp" */;
+			buildPhases = (
+				5A6B7C8D9EAF10B11223C4D6 /* Sources */,
+				3A4B5C6D7E8F90A10213B4C5 /* Frameworks */,
+				5A6B7C8D9EAF10B11223C4D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WendyApp;
+			productName = WendyApp;
+			productReference = 2A3B4C5D6E7F80910213A4B5 /* WendyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A7B8C9DAEBF20C11233D4E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+			};
+			buildConfigurationList = 7A8B9CADBEBF30D11243E4F5 /* Build configuration list for PBXProject "WendyApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A5B6C7D8E9F00A11213B4C5 /* root */;
+			productRefGroup = 4A5B6C7D8E9F00A11213B4CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A6B7C8D9EAF10B11223C4D5 /* WendyApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A6B7C8D9EAF10B11223C4D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A6B7C8D9EAF10B11223C4D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1B2C3D4E5F60718293A4B5 /* WendyApp.swift in Sources */,
+				8A1B2C3D4E5F60718293A4B6 /* ChatMessage.swift in Sources */,
+				8A1B2C3D4E5F60718293A4B7 /* Configuration.swift in Sources */,
+				8A1B2C3D4E5F60718293A4B8 /* APIService.swift in Sources */,
+				8A1B2C3D4E5F60718293A4C0 /* ChatViewModel.swift in Sources */,
+				8A1B2C3D4E5F60718293A4C1 /* ChatView.swift in Sources */,
+				8A1B2C3D4E5F60718293A4C2 /* MessageBubble.swift in Sources */,
+				8A1B2C3D4E5F60718293A4C3 /* InputBar.swift in Sources */,
+				8A1B2C3D4E5F60718293A4C4 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7A8B9CADBEBF30D11243E4F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A8B9CADBEBF30D11243E4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A8B9CADBEBF30D11243E4F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WendyApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bsp.WendyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A8B9CADBEBF30D11243E500 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WendyApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bsp.WendyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A8B9CADBEBF30D11243E4F5 /* Build configuration list for PBXProject "WendyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A8B9CADBEBF30D11243E4F6 /* Debug */,
+				7A8B9CADBEBF30D11243E4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A8B9CADBEBF30D11243E4F7 /* Build configuration list for PBXNativeTarget "WendyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A8B9CADBEBF30D11243E4F9 /* Debug */,
+				7A8B9CADBEBF30D11243E500 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 6A7B8C9DAEBF20C11233D4E5 /* Project object */;
+}
