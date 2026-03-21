@@ -42,7 +42,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A5B6C7D8E9F00A11213B4C5 /* root */ = {
+		4A5B6C7D8E9F00A11213B4C5 = {
 			isa = PBXGroup;
 			children = (
 				4A5B6C7D8E9F00A11213B4C6 /* WendyApp */,
@@ -144,7 +144,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 4A5B6C7D8E9F00A11213B4C5 /* root */;
+			mainGroup = 4A5B6C7D8E9F00A11213B4C5;
 			productRefGroup = 4A5B6C7D8E9F00A11213B4CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +242,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DZSBW55SX4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WendyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -268,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DZSBW55SX4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WendyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -310,7 +312,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = 6A7B8C9DAEBF20C11233D4E5 /* Project object */;
 }

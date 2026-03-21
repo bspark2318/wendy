@@ -54,14 +54,6 @@ struct ChatView: View {
             .sheet(isPresented: $showSettings) {
                 SettingsView()
             }
-            .alert("Error", isPresented: .init(
-                get: { viewModel.errorMessage != nil },
-                set: { if !$0 { viewModel.errorMessage = nil } }
-            )) {
-                Button("OK") { viewModel.errorMessage = nil }
-            } message: {
-                Text(viewModel.errorMessage ?? "")
-            }
         }
     }
 }
