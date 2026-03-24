@@ -1,20 +1,19 @@
 import Foundation
 
 struct Configuration {
-    static var apiBaseURL: String {
-        UserDefaults.standard.string(forKey: "api_base_url") ?? ""
-    }
+    static let apiBaseURL = "https://prod.wendy-gets-shit-done.today"
 
     static var apiKey: String {
-        UserDefaults.standard.string(forKey: "api_key") ?? ""
+        UserDefaults.standard.string(forKey: "api_key")
+            ?? Bundle.main.infoDictionary?["WendyAPIKey"] as? String
+            ?? ""
     }
 
     static var isConfigured: Bool {
-        !apiBaseURL.isEmpty && !apiKey.isEmpty
+        !apiKey.isEmpty
     }
 
-    static func save(baseURL: String, apiKey: String) {
-        UserDefaults.standard.set(baseURL, forKey: "api_base_url")
+    static func save(apiKey: String) {
         UserDefaults.standard.set(apiKey, forKey: "api_key")
     }
 }

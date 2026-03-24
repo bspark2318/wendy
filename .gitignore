@@ -13,5 +13,8 @@ DerivedData/
 .build/
 .swiftpm/
 
+# Secrets
+Secrets.xcconfig
+
 # macOS
 .DS_Store
