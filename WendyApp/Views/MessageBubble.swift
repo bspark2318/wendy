@@ -11,6 +11,7 @@ struct MessageBubble: View {
             if isUser { Spacer(minLength: 60) }
 
             Text(message.content)
+                .textSelection(.enabled)
                 .padding(12)
                 .background(bubbleBackground)
                 .foregroundStyle(bubbleForeground)
