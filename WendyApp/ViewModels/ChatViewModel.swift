@@ -1,13 +1,58 @@
 import Foundation
+import Combine
 
 @MainActor
 final class ChatViewModel: ObservableObject {
-    /// Oldest messages are dropped so memory and scroll cost stay bounded.
     private let maxStoredMessages = 30
 
     @Published var messages: [ChatMessage] = []
     @Published var inputText = ""
     @Published var isLoading = false
+    @Published private(set) var hasSavedChat = false
+
+    private var backgroundObserver: AnyCancellable?
+
+    private static var saveFileURL: URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("last_chat.json")
+    }
+
+    init() {
+        hasSavedChat = FileManager.default.fileExists(atPath: Self.saveFileURL.path)
+
+        backgroundObserver = NotificationCenter.default
+            .publisher(for: UIApplication.willResignActiveNotification)
+            .sink { [weak self] _ in
+                Task { @MainActor in self?.saveMessages() }
+            }
+    }
+
+    // MARK: - Persistence
+
+    func saveMessages() {
+        guard !messages.isEmpty else { return }
+        do {
+            let data = try JSONEncoder().encode(messages)
+            try data.write(to: Self.saveFileURL, options: .atomic)
+            hasSavedChat = true
+        } catch {
+            // Best-effort; nothing to surface to the user
+        }
+    }
+
+    func loadPreviousMessages() {
+        let url = Self.saveFileURL
+        guard FileManager.default.fileExists(atPath: url.path) else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            messages = try JSONDecoder().decode([ChatMessage].self, from: data)
+        } catch {
+            try? FileManager.default.removeItem(at: url)
+        }
+        hasSavedChat = false
+    }
+
+    // MARK: - Sending
 
     func send() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -28,6 +73,7 @@ final class ChatViewModel: ObservableObject {
                 appendMessage(ChatMessage(role: .error, content: "Something went wrong: \(explanation)"))
             }
             isLoading = false
+            saveMessages()
         }
     }
 

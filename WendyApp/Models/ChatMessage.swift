@@ -1,18 +1,19 @@
 import Foundation
 
-enum MessageRole {
+enum MessageRole: String, Codable {
     case user
     case assistant
     case error
 }
 
-struct ChatMessage: Identifiable {
-    let id = UUID()
+struct ChatMessage: Identifiable, Codable {
+    let id: UUID
     let role: MessageRole
     let content: String
     let timestamp: Date
 
     init(role: MessageRole, content: String) {
+        self.id = UUID()
         self.role = role
         self.content = content
         self.timestamp = Date()

@@ -10,6 +10,20 @@ struct ChatView: View {
                 ScrollViewReader { proxy in
                     ScrollView {
                         LazyVStack(spacing: 10) {
+                            if viewModel.hasSavedChat && viewModel.messages.isEmpty {
+                                Button {
+                                    viewModel.loadPreviousMessages()
+                                } label: {
+                                    Label("Load Previous Chat", systemImage: "clock.arrow.circlepath")
+                                        .font(.subheadline)
+                                        .padding(.vertical, 8)
+                                        .padding(.horizontal, 16)
+                                        .background(Color(.systemGray5))
+                                        .clipShape(Capsule())
+                                }
+                                .padding(.bottom, 4)
+                            }
+
                             ForEach(viewModel.messages) { msg in
                                 MessageBubble(message: msg)
                                     .id(msg.id)
