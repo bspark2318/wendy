@@ -38,13 +38,15 @@ struct ChatView: View {
                                     Spacer(minLength: 60)
                                 }
                             }
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id("bottomAnchor")
                         }
                         .padding()
                     }
                     .onChange(of: viewModel.messages.count) { _, _ in
-                        if let last = viewModel.messages.last {
-                            withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
-                        }
+                        withAnimation { proxy.scrollTo("bottomAnchor") }
                     }
                 }
 
