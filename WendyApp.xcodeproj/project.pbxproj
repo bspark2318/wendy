@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7F8304362F6E25E40096B3EB /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7F8304352F6E25E40096B3EB /* Secrets.xcconfig */; };
-		7F8304382F70C7B10096B3EB /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8304372F70C4A70096B3EB /* Untitled.swift */; };
 		8A1B2C3D4E5F60718293A4B5 /* WendyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B5 /* WendyApp.swift */; };
 		8A1B2C3D4E5F60718293A4B6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B6 /* ChatMessage.swift */; };
 		8A1B2C3D4E5F60718293A4B7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B7 /* Configuration.swift */; };
@@ -33,7 +32,6 @@
 		1A2B3C4D5E6F70819203A4C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2A3B4C5D6E7F80910213A4B5 /* WendyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WendyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8304352F6E25E40096B3EB /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
-		7F8304372F70C4A70096B3EB /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		AA1B2C3D4E5F70819203A4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +52,6 @@
 				7F8304352F6E25E40096B3EB /* Secrets.xcconfig */,
 				4A5B6C7D8E9F00A11213B4C6 /* WendyApp */,
 				4A5B6C7D8E9F00A11213B4CB /* Products */,
-				7F8304372F70C4A70096B3EB /* Untitled.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,7 +183,6 @@
 				8A1B2C3D4E5F60718293A4B8 /* APIService.swift in Sources */,
 				8A1B2C3D4E5F60718293A4C0 /* ChatViewModel.swift in Sources */,
 				8A1B2C3D4E5F60718293A4C1 /* ChatView.swift in Sources */,
-				7F8304382F70C7B10096B3EB /* Untitled.swift in Sources */,
 				8A1B2C3D4E5F60718293A4C2 /* MessageBubble.swift in Sources */,
 				8A1B2C3D4E5F60718293A4C3 /* InputBar.swift in Sources */,
 				8A1B2C3D4E5F60718293A4C4 /* SettingsView.swift in Sources */,
