@@ -11,15 +11,24 @@ final class ChatViewModel: ObservableObject {
     @Published var isLoading = false
     @Published private(set) var hasSavedChat = false
 
+    @Published var currentAgent: AgentProfile = Configuration.currentAgent {
+        didSet {
+            guard oldValue != currentAgent else { return }
+            switchAgent(from: oldValue)
+        }
+    }
+
     private var backgroundObserver: AnyCancellable?
 
-    private static var saveFileURL: URL {
+    private static func saveFileURL(for agent: AgentProfile) -> URL {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("last_chat.json")
+            .appendingPathComponent("last_chat_\(agent.rawValue).json")
     }
 
     init() {
-        hasSavedChat = FileManager.default.fileExists(atPath: Self.saveFileURL.path)
+        hasSavedChat = FileManager.default.fileExists(
+            atPath: Self.saveFileURL(for: currentAgent).path
+        )
 
         backgroundObserver = NotificationCenter.default
             .publisher(for: UIApplication.willResignActiveNotification)
@@ -28,21 +37,32 @@ final class ChatViewModel: ObservableObject {
             }
     }
 
+    // MARK: - Agent switching
+
+    private func switchAgent(from previous: AgentProfile) {
+        saveMessages()
+        Configuration.currentAgent = currentAgent
+        messages = []
+        hasSavedChat = FileManager.default.fileExists(
+            atPath: Self.saveFileURL(for: currentAgent).path
+        )
+    }
+
     // MARK: - Persistence
 
     func saveMessages() {
         guard !messages.isEmpty else { return }
         do {
             let data = try JSONEncoder().encode(messages)
-            try data.write(to: Self.saveFileURL, options: .atomic)
+            try data.write(to: Self.saveFileURL(for: currentAgent), options: .atomic)
             hasSavedChat = true
         } catch {
-            // Best-effort; nothing to surface to the user
+            // Best-effort
         }
     }
 
     func loadPreviousMessages() {
-        let url = Self.saveFileURL
+        let url = Self.saveFileURL(for: currentAgent)
         guard FileManager.default.fileExists(atPath: url.path) else { return }
         do {
             let data = try Data(contentsOf: url)
@@ -64,9 +84,10 @@ final class ChatViewModel: ObservableObject {
         inputText = ""
         isLoading = true
 
+        let agent = currentAgent
         Task { @MainActor in
             do {
-                let response = try await APIService.shared.sendMessage(text)
+                let response = try await APIService.shared.sendMessage(text, agent: agent)
                 let assistantMessage = ChatMessage(role: .assistant, content: response)
                 appendMessage(assistantMessage)
             } catch {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F83043A2F6E26A40096B3EB /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F8304382F6E26A40096B3EB /* MarkdownUI */; };
 		7F8304362F6E25E40096B3EB /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7F8304352F6E25E40096B3EB /* Secrets.xcconfig */; };
 		8A1B2C3D4E5F60718293A4B5 /* WendyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B5 /* WendyApp.swift */; };
 		8A1B2C3D4E5F60718293A4B6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70819203A4B6 /* ChatMessage.swift */; };
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F83043A2F6E26A40096B3EB /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +130,9 @@
 			dependencies = (
 			);
 			name = WendyApp;
+			packageProductDependencies = (
+				7F8304382F6E26A40096B3EB /* MarkdownUI */,
+			);
 			productName = WendyApp;
 			productReference = 2A3B4C5D6E7F80910213A4B5 /* WendyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 4A5B6C7D8E9F00A11213B4C5;
+			packageReferences = (
+				7F8304372F6E26A40096B3EB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = 4A5B6C7D8E9F00A11213B4CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -374,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F8304372F6E26A40096B3EB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F8304382F6E26A40096B3EB /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F8304372F6E26A40096B3EB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A7B8C9DAEBF20C11233D4E5 /* Project object */;
 }

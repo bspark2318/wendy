@@ -4,10 +4,10 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>Wendy</string>
-	<key>WendyAPIBaseURL</key>
-	<string>$(WENDY_API_BASE_URL)</string>
 	<key>WendyAPIKey</key>
 	<string>$(WENDY_API_KEY)</string>
+	<key>BusinessAPIKey</key>
+	<string>$(BUSINESS_API_KEY)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

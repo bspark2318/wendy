@@ -54,13 +54,31 @@ struct ChatView: View {
 
                 InputBar(
                     text: $viewModel.inputText,
+                    placeholder: "Message \(viewModel.currentAgent.displayName)...",
                     isLoading: viewModel.isLoading,
                     onSend: { viewModel.send() }
                 )
             }
-            .navigationTitle("Wendy")
+            .navigationTitle(viewModel.currentAgent.displayName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        ForEach(AgentProfile.allCases, id: \.self) { agent in
+                            Button {
+                                viewModel.currentAgent = agent
+                            } label: {
+                                if agent == viewModel.currentAgent {
+                                    Label(agent.displayName, systemImage: "checkmark")
+                                } else {
+                                    Text(agent.displayName)
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: {
                         Image(systemName: "gearshape")

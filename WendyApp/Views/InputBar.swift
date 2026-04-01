@@ -2,13 +2,14 @@ import SwiftUI
 
 struct InputBar: View {
     @Binding var text: String
+    var placeholder: String = "Message Wendy..."
     let isLoading: Bool
     let onSend: () -> Void
     @State private var textFieldID = UUID()
 
     var body: some View {
         HStack(spacing: 10) {
-            TextField("Message Wendy...", text: $text, axis: .vertical)
+            TextField(placeholder, text: $text, axis: .vertical)
                 .id(textFieldID)
                 .textFieldStyle(.plain)
                 .padding(10)

@@ -3,6 +3,7 @@ import Foundation
 struct ChatRequestBody: Encodable {
     let message: String
     let user_id: String
+    let agent: String
 }
 
 struct ChatResponseBody: Decodable {
@@ -13,22 +14,31 @@ final class APIService {
     static let shared = APIService()
     private init() {}
 
-    func sendMessage(_ message: String, userID: String = "ios_user") async throws -> String {
-        guard Configuration.isConfigured else {
+    func sendMessage(
+        _ message: String,
+        agent: AgentProfile = Configuration.currentAgent,
+        userID: String = "ios_user"
+    ) async throws -> String {
+        guard Configuration.isConfigured(for: agent) else {
             throw APIError.notConfigured
         }
 
-        guard let url = URL(string: "\(Configuration.apiBaseURL)/api/chat") else {
+        let baseURL = Configuration.apiBaseURL(for: agent)
+        guard let url = URL(string: "\(baseURL)/api/chat") else {
             throw APIError.invalidURL
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(Configuration.apiKey, forHTTPHeaderField: "X-API-Key")
+        request.setValue(Configuration.apiKey(for: agent), forHTTPHeaderField: "X-API-Key")
         request.timeoutInterval = 120
 
-        let body = ChatRequestBody(message: message, user_id: userID)
+        let body = ChatRequestBody(
+            message: message,
+            user_id: userID,
+            agent: agent.rawValue
+        )
         request.httpBody = try JSONEncoder().encode(body)
 
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -55,7 +65,7 @@ enum APIError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .notConfigured:
-            return "API not configured. Tap the gear icon to set your server URL and API key."
+            return "API not configured. Tap the gear icon to set the server URL and API key for this agent."
         case .invalidURL:
             return "Invalid server URL."
         case .invalidResponse:
