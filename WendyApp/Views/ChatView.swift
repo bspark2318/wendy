@@ -59,10 +59,9 @@ struct ChatView: View {
                     onSend: { viewModel.send() }
                 )
             }
-            .navigationTitle(viewModel.currentAgent.displayName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .principal) {
                     Menu {
                         ForEach(AgentProfile.allCases, id: \.self) { agent in
                             Button {
@@ -76,7 +75,13 @@ struct ChatView: View {
                             }
                         }
                     } label: {
-                        Image(systemName: "person.crop.circle")
+                        HStack(spacing: 4) {
+                            Text(viewModel.currentAgent.displayName)
+                                .font(.headline)
+                            Image(systemName: "chevron.down")
+                                .font(.caption)
+                        }
+                        .foregroundStyle(.primary)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
