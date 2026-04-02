@@ -81,7 +81,7 @@ struct ChatView: View {
                             Image(systemName: "chevron.down")
                                 .font(.caption)
                         }
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.white)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
